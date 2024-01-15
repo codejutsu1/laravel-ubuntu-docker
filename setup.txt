@@ -1,0 +1,22 @@
+- To create a new Laravel project on a system with no composer, php or other dependencies installed
+- Download Docker 
+- Start Docker
+- For Ubuntu, open your terminal
+- check if docker is installed, "docker --version"
+- Navigate to the path you want your project to be eg $cd Downloads/Projects
+- Run "docker run --rm -v $HOME/.cache/composer:/tmp -v $(pwd):/app -w /app composer composer create-project --prefer-dist laravel/laravel {your-app-name}"
+    - This creates the latest composer image if not available
+    - And installs a new laravel project into your system.
+
+    -If installed, check for the files permission, "ls -lf {your-app-name}"
+    -if root, 
+        run "$sudo chown -R ${USER}: {your-app-name}
+    or create a new project by running this command
+        "docker run -u ${UID}:${UID} --rm -v $HOME/.cache/composer:/tmp -v $(pwd):/app -w /app composer composer create-project --prefer-dist laravel/laravel {your-app-name}"
+
+- Visit "https://laravel.com/docs/10.x/sail#installing-composer-dependencies-for-existing-projects"
+
+for the errors bootstrap/cache must be present and writable
+    - sudo chmod -R 777 storage/
+    - sudo chmod -R 777 bootstrap/
+
