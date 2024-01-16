@@ -1,10 +1,10 @@
 # Laravel Docker Configuration on Ubuntu OS
 
-You can run a laravel applicaition even if you don't have PHP, NGINX, PHPMYADMIN, MYSQL, MAILHOG and Composer on your local machine. You can achieve this using the docker services in the docker-compose.yml file.
+You can run a laravel applicaition even if you don't have PHP, NGINX, PHPMYADMIN, MYSQL, MAILHOG and Composer on your local machine. You can achieve this using the docker services in the [docker-compose.yml file](https://github.com/codejutsu1/laravel-ubuntu-docker/blob/main/docker-compose.yml).
 
 I also configured PHP and NGINX for local development with laravel.
 
-## prerequisite
+## Prerequisite
 - Docker
 - Docker Compose
 
@@ -21,7 +21,7 @@ docker run --rm -v $HOME/.cache/composer:/tmp -v $(pwd):/app -w /app composer co
 
 This command will install a composer image and create a fresh laravel project.
 
->> For more information, check the [setup.txt file].
+> For more information, check the [setup.txt file](https://github.com/codejutsu1/laravel-ubuntu-docker/blob/main/setup.txt).
 
 ### To Run on docker
 
