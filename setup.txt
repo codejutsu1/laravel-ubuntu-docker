@@ -14,9 +14,15 @@
     or create a new project by running this command
         "docker run -u ${UID}:${UID} --rm -v $HOME/.cache/composer:/tmp -v $(pwd):/app -w /app composer composer create-project --prefer-dist laravel/laravel {your-app-name}"
 
+
+To run sail (Second Option)
+
 - Visit "https://laravel.com/docs/10.x/sail#installing-composer-dependencies-for-existing-projects"
 
 for the errors bootstrap/cache must be present and writable
     - sudo chmod -R 777 storage/
     - sudo chmod -R 777 bootstrap/
 
+Then
+
+./vendor/bin/sail up -d 
