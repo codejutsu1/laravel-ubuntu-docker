@@ -26,3 +26,21 @@ for the errors bootstrap/cache must be present and writable
 Then
 
 ./vendor/bin/sail up -d 
+
+To run project on composer and php
+
+docker run --rm -it -v $(pwd):/app -w /app laravelsail/php83-composer bash
+
+then access the terminal
+
+............
+
+1. docker run: This tells Docker to run a container.
+
+2. --rm: This option tells Docker to remove the container after it exits. It's optional, but it's useful for cleanup.
+
+3 . -it: These options combine two flags: -i keeps STDIN open even if not attached, and -t allocates a pseudo-TTY. This makes the container interactive, so you can type commands into it.
+
+4. -v $(pwd):/app:  we're connecting the folder you're currently working in (that's what $(pwd) means, it's just the folder you're in) to a place inside the container called "/app". So, anything you have in your current folder, the container can see it too!
+
+5. laravelsail/php83-composer bash: The bash from this image from sail.

@@ -21,15 +21,27 @@ docker run --rm -v $HOME/.cache/composer:/tmp -v $(pwd):/app -w /app composer co
 
 This command will install a composer image and create a fresh laravel project.
 
+> [!NOTE]
 > For more information, check the [setup.txt file](https://github.com/codejutsu1/laravel-ubuntu-docker/blob/main/setup.txt).
 
-### To Run on docker
+## To Run on docker
 
-- Copy the folders and files of this directory to your laravel project.
+- Copy tall files of this directory to your laravel project.
 
-Then run 
+```
+cp -a ./{this-repository-folder}/. /{your-project-folder}/
+```
+- cd to your laravel project folder
+```
+cd {your-project-folder}
+```
+- Then run 
 
 ```
 docker compose up -d
 ```
-To build the images and create a container for your project.
+This commands build the images and create a container for your project.
+
+## Further
+
+You can access your laravel project on 
