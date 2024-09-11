@@ -44,3 +44,15 @@ then access the terminal
 4. -v $(pwd):/app:  we're connecting the folder you're currently working in (that's what $(pwd) means, it's just the folder you're in) to a place inside the container called "/app". So, anything you have in your current folder, the container can see it too!
 
 5. laravelsail/php83-composer bash: The bash from this image from sail.
+
+
+
+mv ~/.config/google-chrome ~/.config/google-chrome-backup
+
+for the bootstrap issue
+
+- cd .git
+- nano info/exclude
+- /storage/*
+- /bootstrap/cache/*
+- docker-compose.yml 
