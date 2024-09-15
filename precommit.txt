@@ -1,0 +1,38 @@
+#!/bin/bash
+
+run_in_sail_root() {
+    ./vendor/bin/sail root-shell -c "$1"
+}
+
+echo "Running code Formatting"
+run_in_sail_root "php ./vendor/bin/pint"
+
+if [ $? -ne 0 ]; then
+    echo "Code formatting failed. Aborting commit."
+    exit 1
+fi
+
+echo "Code Formatting Successful"
+
+echo "Running Static Analysis"
+run_in_sail_root "php ./vendor/bin/phpstan analyse"
+
+if [ $? -ne 0 ]; then
+    echo "Static Analysis failed. Aborting commit."
+    exit 1
+fi
+
+echo "Static Analysis Completed"
+
+
+echo "Running Code Tests"
+run_in_sail_root "php ./vendor/bin/pest --parallel"
+
+if [ $? -ne 0 ]; then
+    echo "Code Tests failed. Aborting com
+    
+    mit."
+    exit 1
+fi
+
+echo "Tests Ran Successfully"
